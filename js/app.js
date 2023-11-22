@@ -4,24 +4,24 @@ Cuando el usuario adivine el numero mostrar un mensaje indicando al usuario que 
 
 //1er funion NUMERO_ALEATORIO
 
-let numeroAleatorio = 0;
+let numeroMagico = 0;
 
 const numero_aleatorio = () => {
   const minimo = 1;
   const maximo = 10;
-  numeroAleatorio = Math.floor(Math.random() * (maximo - minimo + 1) + minimo);
-  console.log(`El boton aleatorio dio ${numeroAleatorio}`);
-  return numeroAleatorio;
+  numeroMagico = Math.floor(Math.random() * (maximo - minimo + 1) + minimo);
+  console.log(`El boton aleatorio dio ${numeroMagico}`);
+  return numeroMagico;
 };
 
 //2da funcion OBTENER_NUMERO_USUARIO
 const obtener_numeroUsuario = (e) => {
   e.preventDefault();
-  const input_ObtenerNumero = document.querySelector(".form-control").value;
+  const input_ObtenerNumero = parseInt(document.querySelector(".form-control").value);
   console.log(`el usuario dio ${input_ObtenerNumero}`);
-  if (numeroAleatorio === input_ObtenerNumero) {
+  if (numeroMagico === input_ObtenerNumero) {
     alert(`GANASTE: ACERTASTE EL NÚMERO`);
-  } else if (numeroAleatorio > input_ObtenerNumero) {
+  } else if (numeroMagico > input_ObtenerNumero) {
     alert(`FALLASTE: el numero mágico es mayor`);
   } else {
     alert(`FALLASTE: el número mágico es menor`);
